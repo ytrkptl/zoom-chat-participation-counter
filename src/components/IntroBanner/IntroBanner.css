@@ -1,0 +1,23 @@
+.readable-background {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: lightgrey;
+  width: 90vw;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 60px;
+}
+
+.intro-span {
+  margin: 10px;
+  color: black;
+}
+.zoom-link {
+  color: blue;
+}
+.zoom-logo {
+  max-width: 80px;
+  margin: 10px;
+}

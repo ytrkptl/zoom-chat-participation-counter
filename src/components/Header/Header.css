@@ -1,0 +1,22 @@
+.logo-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  height: 60px;
+  z-index: 1;
+  background-color: #282c34;
+  width: 100%;
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
+  margin: 10px;
+}
+
+.title {
+  margin-left: 10px;
+  margin-right: 10px;
+}

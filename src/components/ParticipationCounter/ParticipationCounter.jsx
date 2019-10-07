@@ -1,12 +1,9 @@
-import React, { useState, useRef } from 'react';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import './App.css';
-import ParticipationCounter from './components/ParticipationCounter/ParticipationCounter';
-import IntroBanner from './components/IntroBanner/IntroBanner';
+import React, { useState, useRef } from 'react'
+import zoomLogo from '../../assets/Zoom Blue Logo.png';
+import './ParticipationCounter.css';
 
-const App = () => {
-
+const ParticipationCounter = () => {
+  
   let [sortedArray, updateSortedArray] = useState(null);
   let [lastname, updateLastname] = useState('Patel');
   let [results, showResults] = useState(false);
@@ -42,7 +39,6 @@ const App = () => {
     */
   
   };
-  
   
   const splitByLine = (text) => {
     // split string by lines
@@ -120,13 +116,43 @@ const App = () => {
   }
 
   return (
-    <div className="App">
-      <Header />
-      <IntroBanner />
-      <ParticipationCounter />  
-      <Footer />
+    <div>
+      {
+        results===true &&
+        <div className="tableDiv">
+          <table>
+            <tbody>
+            <tr>
+              <th>Name</th>
+              <th>Count</th>
+            </tr>
+          {
+            sortedArray.map((el, index)=><tr key={index}><td>{el.name}</td><td>{el.total}</td></tr>)
+          }
+            </tbody>
+          </table>
+          <button className="clear-results-button" onClick={()=>clearResults()}>Clear Results</button>
+        </div>
+      }
+      <p className="step-para-1"><span className="step">1️</span>Enter your last name exactly as it appears in your Zoom Chat History</p>
+      <div className="name-label-div">
+        <label htmlFor="lastname">Last name:</label>
+        <input type="text" name="lastname" placeholder="Patel" value={lastname} onChange={(event)=>updateLastname(event.target.value)}/>
+      </div>
+      <br/>
+      <p><span className="step">2</span>Copy-paste the chat from your saved chat file below to the text area below</p>
+      <textarea ref={textareaRef} className="data" name="message"></textarea> 
+      <br/>
+      <div className="step-para-3-div">
+        <p ><span className="step">3</span>{`Click on the Submit button below, and use the other buttons as per your need. The results
+        should be displayed above Step 1.`}</p>
+
+        <button className="submit-button" type="button" onClick={()=>readData()}>Submit</button>
+        <button className="clear-textarea-button" type="button" onClick={()=>clearTextArea()}>Clear Text Area</button>
+        <button className="clear-all-button" type="button" onClick={()=>clearAll()}>Clear All</button>
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default ParticipationCounter;
