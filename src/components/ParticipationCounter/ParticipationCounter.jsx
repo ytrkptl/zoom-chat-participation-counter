@@ -140,7 +140,7 @@ const ParticipationCounter = () => {
         <input type="text" name="lastname" placeholder="Patel" value={lastname} onChange={(event)=>updateLastname(event.target.value)}/>
       </div>
       <br/>
-      <p><span className="step">2</span>Copy-paste the chat from your saved chat file below to the text area below</p>
+      <p><span className="step">2</span>Copy-paste the contents from your saved "meeting_saved_chat.txt" file to the text area below</p>
       <textarea ref={textareaRef} className="data" name="message"></textarea> 
       <br/>
       <div className="step-para-3-div">
