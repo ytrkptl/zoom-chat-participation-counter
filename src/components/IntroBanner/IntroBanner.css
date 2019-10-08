@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin-top: 60px;
   display: grid;
-  grid-template-rows: 40px 1fr;
+  grid-template-rows: auto 1fr;
 }
 
 .dropdown-text {
@@ -14,11 +14,15 @@
   box-sizing: border-box;
   margin: auto;
   color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .dropdown-button {
   margin: 0px 10px;
   border: 1px solid black;
+  padding: 4px 10px;
 }
 
 .extra-info {
