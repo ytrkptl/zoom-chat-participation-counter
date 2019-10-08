@@ -1,4 +1,4 @@
-.tableDiv {
+.table-div {
   margin-top: 20px;
   margin-bottom: 20px;
   background: white;
@@ -26,6 +26,21 @@
   border: none;
 }
 
+.step-and-text-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-and-text-div:first-child {
+  margin-top: 20px;
+}
+
+.step-div-2 {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
 .step {
   margin: 10px;
   padding-top: 4px;
@@ -43,9 +58,9 @@
 .or {
   background: lightcoral;
   border-radius: 50px;
-}
-.step-para-1 {
-  margin-top: 40px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .name-label-div label {
@@ -53,8 +68,7 @@
 }
 .name-label-div input[type=text] {
   padding: 10px;
-  margin-bottom: 0px;
-  margin-top: 20px;
+  margin-top:10px;
 }
 
 .name-label-div input[type=text]::placeholder {
@@ -71,6 +85,7 @@
 	width: 120px;
   box-sizing: border-box;
   margin: auto;
+  margin-bottom: 10px;
 }
 
 .file-upload-div:hover {
@@ -96,9 +111,9 @@
 	text-align: center;
 }
 
-.step-para-3-div {
-  margin-top: 20px;
-  margin-bottom: 54px;
+.step-div-3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .submit-button {
@@ -150,4 +165,13 @@ th:first-child, td {
 th, td {
   padding: 4px 15px;
   color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .step-and-text-div {
+    align-items: flex-start;
+  }
+  .step-para-1 {
+    margin-top: 6px;
+  }
 }

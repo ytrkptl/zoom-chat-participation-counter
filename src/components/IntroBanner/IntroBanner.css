@@ -1,13 +1,34 @@
 .readable-background {
-  display: flex;
+  background: lightgrey;
+  width: 90vw;
+  box-sizing: border-box;
+  margin-top: 60px;
+  display: grid;
+  grid-template-rows: 40px 1fr;
+}
+
+.dropdown-text {
+  background: lightskyblue;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin: auto;
+  color: black;
+}
+
+.dropdown-button {
+  margin: 0px 10px;
+  border: 1px solid black;
+}
+
+.extra-info {
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background: lightgrey;
-  width: 90vw;
-  padding: 20px;
   box-sizing: border-box;
-  margin-top: 60px;
+  padding: 20px;
+  border-top: 1px solid gray;
 }
 
 .intro-span {

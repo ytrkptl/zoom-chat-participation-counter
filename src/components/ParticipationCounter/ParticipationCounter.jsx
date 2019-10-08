@@ -158,7 +158,7 @@ const ParticipationCounter = () => {
     <div>
       {
         results===true &&
-        <div className="tableDiv">
+        <div className="table-div">
           <div className="buttons-above-table">
             <button type="button" onClick={()=>sortByParticipation()}>Sort by Participation</button>
             <button type="button" onClick={()=>sortAlphabetically()}>Sort Alphabetically</button>
@@ -177,22 +177,24 @@ const ParticipationCounter = () => {
           <button className="clear-results-button" onClick={()=>clearResults()}>Clear Results</button>
         </div>
       }
-      <p className="step-para-1"><span className="step" role="img" aria-label="step one">1️</span>Enter your last name exactly as it appears in your Zoom Chat History</p>
+      <div className="step-and-text-div">
+        <span className="step">1</span>
+        <p className="step-para-1">Enter your last name exactly as it appears in your Zoom Chat History</p>
+      </div>
       <div className="name-label-div">
         <label htmlFor="lastname">Last name:</label>
         <input type="text" name="lastname" placeholder="Patel" value={lastname} onChange={(event)=>updateLastname(event.target.value)}/>
       </div>
       <br/>
-      
-      <p>
-        <span className="step" role="img" aria-label="step one">2</span>
-        Copy-paste the contents from your saved "meeting_saved_chat.txt" file to the text area below
-      </p>
-      <span className="step or">OR</span>
-      <p>
-        <span className="step" role="img" aria-label="step two">2</span>
-        Select a file from your computer using the button below
-      </p>
+      <div className="step-and-text-div step-div-2">
+        <span className="step">2</span>
+        <p className="step-para-1">Copy-paste the contents from your saved "meeting_saved_chat.txt" file to the text area below</p>
+      </div>
+      <p className="step or">OR</p>
+      <div className="step-and-text-div step-div-2">
+        <span className="step">2</span>
+        <p className="step-para-1">Select a file from your computer using the button below</p>
+      </div>
       <div className="file-upload-div">
           <input 
             className="file-upload-input"
@@ -205,9 +207,12 @@ const ParticipationCounter = () => {
         </div>
       <textarea ref={textareaRef} className="data" name="message"></textarea> 
       <br/>
-      <div className="step-para-3-div">
-        <p ><span className="step" role="img" aria-label="step three">3</span>{`Click on the Submit button below, and use the other buttons as per your need. The results
-        should be displayed above Step 1.`}</p>
+      <div className="step-and-text-div step-div-3">
+        <span className="step">3</span>
+        <p className="step-para-1">{`Click on the Submit button below, and use the other 
+        buttons as per your need. The results should be displayed above Step 1.`}</p>
+      </div>
+      <div className="buttons-div">
         <button className="submit-button" type="button" onClick={()=>sortByParticipation()}>Sort by Participation</button>
         <button className="submit-button" type="button" onClick={()=>sortAlphabetically()}>Sort Alphabetically</button>
         <button className="clear-textarea-button" type="button" onClick={()=>clearTextArea()}>Clear Text Area</button>
