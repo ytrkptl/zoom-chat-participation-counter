@@ -9,6 +9,7 @@ const ParticipationCounter = () => {
   let [results, showResults] = useState(false);
   let textareaRef = useRef();
 
+  // source: http://chrisjopa.com/2016/04/21/counting-word-frequencies-with-javascript/
   const readData = () => {
     // if (err) throw err;
     let data = textareaRef.current.value;
@@ -19,16 +20,12 @@ const ParticipationCounter = () => {
     // var filteredFinalWordsArray = finalWordsArray;
   
     let resultsArray = hasCertainPattern(data);
-    let wordmappp = createWordMap(resultsArray)
-    updateSortedArray(sortByCount(wordmappp))
+    let wordmappp = createWordMap(resultsArray);
+    let anotherArray = sortByCount(wordmappp);
+    updateSortedArray(anotherArray);
     showResults(true)
-    // setTimeout(()=>showResults(true), 2000); 
-  
-    // console.log(filteredFinalWordsArray);
-    // console.log('The word "' + sortedArray[0].name + '" appears the most in the file ' +
-    //   sortedArray[0].total + ' times');
     
-    return sortedArray;
+    return anotherArray;
     /*
       output:
       [ { name: 'he', total: 10 },
@@ -45,7 +42,6 @@ const ParticipationCounter = () => {
     var linesArray = text.split(/\n/);
     return linesArray;
   }
-  
   
   const createWordMap = (wordsArray) =>{
   
@@ -67,11 +63,9 @@ const ParticipationCounter = () => {
     });
   
     return wordsMap;
-  
   }
   
   const sortByCount = (wordsMap) => {
-  
     // sort by count in descending order
     var finalWordsArray = [];
     finalWordsArray = Object.keys(wordsMap).map(function(key) {
@@ -86,9 +80,42 @@ const ParticipationCounter = () => {
     });
   
     return finalWordsArray;
-  
   }
   
+  // source: https://ourcodeworld.com/articles/read/764/how-to-sort-alphabetically-an-array-of-objects-by-key-in-javascript
+  const dynamicSort = (property) => {
+    let sortOrder = 1;
+
+    if(property[0] === "-") {
+      sortOrder = -1;
+      property = property.substr(1);
+    }
+
+    return function (a,b) {
+      if(sortOrder == -1){
+          return b[property].localeCompare(a[property]);
+      }else{
+          return a[property].localeCompare(b[property]);
+      }        
+    }
+  }
+
+  const sortByParticipation = () => {
+    readData();
+  }
+
+  const sortAlphabetically = () => {
+    new Promise ((resolve, reject) => {
+      let hmm = readData();
+      if (resolve) {
+        let sortedAlphabetically = hmm.sort(dynamicSort("name"));
+        updateSortedArray(sortedAlphabetically);
+      } else if (reject) {
+        console.log('not done')
+      }
+    })
+  }
+
   const hasCertainPattern = (data) => {
     const result = splitByLine(data);
     let someArray = []
@@ -120,6 +147,10 @@ const ParticipationCounter = () => {
       {
         results===true &&
         <div className="tableDiv">
+          <div className="buttons-above-table">
+            <button className="submit-button" type="button" onClick={()=>sortByParticipation()}>Sort by Participation</button>
+            <button className="submit-button" type="button" onClick={()=>sortAlphabetically()}>Sort Alphabetically</button>
+          </div>
           <table>
             <tbody>
             <tr>
@@ -146,8 +177,8 @@ const ParticipationCounter = () => {
       <div className="step-para-3-div">
         <p ><span className="step">3</span>{`Click on the Submit button below, and use the other buttons as per your need. The results
         should be displayed above Step 1.`}</p>
-
-        <button className="submit-button" type="button" onClick={()=>readData()}>Submit</button>
+        <button className="submit-button" type="button" onClick={()=>sortByParticipation()}>Sort by Participation</button>
+        <button className="submit-button" type="button" onClick={()=>sortAlphabetically()}>Sort Alphabetically</button>
         <button className="clear-textarea-button" type="button" onClick={()=>clearTextArea()}>Clear Text Area</button>
         <button className="clear-all-button" type="button" onClick={()=>clearAll()}>Clear All</button>
       </div>

@@ -4,6 +4,12 @@
   background: white;
 }
 
+.buttons-above-table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .step {
   margin: 10px;
   padding-top: 4px;
@@ -82,6 +88,7 @@ table {
 }
 th {
   border-bottom: 1px solid black;
+  border-top: 1px solid black;
 }
 tr {
   border-bottom: 1px solid lightgray;
