@@ -10,6 +10,22 @@
   align-items: center;
 }
 
+.buttons-above-table button {
+  background: lightcoral;
+  margin: 10px;
+  height: 40px;
+  width: auto;
+  border: none;
+}
+
+.clear-results-button {
+  background: lightcoral;
+  margin: 10px;
+  height: 40px;
+  width: auto;
+  border: none;
+}
+
 .step {
   margin: 10px;
   padding-top: 4px;
@@ -24,6 +40,10 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.or {
+  background: lightcoral;
+  border-radius: 50px;
+}
 .step-para-1 {
   margin-top: 40px;
 }
@@ -41,34 +61,65 @@
   color: rgb(10, 10, 10);
 }
 
+.file-upload-div {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	transition: all 0.3s ease;
+	width: 120px;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+.file-upload-div:hover {
+	transform: scale(1.05);
+}
+
+.file-upload-input {
+	opacity: 0;
+	padding: 10px;
+	z-index: 1;
+	width: 120px;
+	box-sizing: border-box;
+}
+
+.file-upload-span {
+	position: absolute;
+	background-color: #e8e8e8;
+	z-index: 0;
+	color: black;
+	padding: 14px 10px;
+	width: 120px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
 .step-para-3-div {
   margin-top: 20px;
   margin-bottom: 54px;
 }
-.clear-results-button {
-  margin: 10px;
-  height: 30px;
-  width: auto;
-  background: rgb(255, 120, 120);
-}
 
 .submit-button {
   margin: 10px;
-  height: 30px;
+  height: 40px;
   width: auto;
-  background: rgb(38, 209, 38);
+  border: none;
 }
 
 .clear-textarea-button {
   margin: 10px;
-  height: 30px;
+  height: 40px;
   width: auto;
+  border: none;
 }
 
 .clear-all-button {
   margin: 10px;
-  height: 30px;
+  height: 40px;
   width: auto;
+  border: none;
 }
 
 .data {

@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react'
-import zoomLogo from '../../assets/Zoom Blue Logo.png';
 import './ParticipationCounter.css';
 
 const ParticipationCounter = () => {
@@ -92,7 +91,7 @@ const ParticipationCounter = () => {
     }
 
     return function (a,b) {
-      if(sortOrder == -1){
+      if(sortOrder === -1){
           return b[property].localeCompare(a[property]);
       }else{
           return a[property].localeCompare(b[property]);
@@ -142,14 +141,27 @@ const ParticipationCounter = () => {
     clearResults();
   }
 
+  const fileSelectedHandler = (somefile) => {
+    let reader;
+    
+    const handleFileRead = () => {
+      const content = reader.result;
+      textareaRef.current.value = content;
+    }
+
+    reader = new FileReader();
+    reader.onloadend = handleFileRead;
+    reader.readAsText(somefile);
+  }
+
   return (
     <div>
       {
         results===true &&
         <div className="tableDiv">
           <div className="buttons-above-table">
-            <button className="submit-button" type="button" onClick={()=>sortByParticipation()}>Sort by Participation</button>
-            <button className="submit-button" type="button" onClick={()=>sortAlphabetically()}>Sort Alphabetically</button>
+            <button type="button" onClick={()=>sortByParticipation()}>Sort by Participation</button>
+            <button type="button" onClick={()=>sortAlphabetically()}>Sort Alphabetically</button>
           </div>
           <table>
             <tbody>
@@ -165,17 +177,36 @@ const ParticipationCounter = () => {
           <button className="clear-results-button" onClick={()=>clearResults()}>Clear Results</button>
         </div>
       }
-      <p className="step-para-1"><span className="step">1️</span>Enter your last name exactly as it appears in your Zoom Chat History</p>
+      <p className="step-para-1"><span className="step" role="img" aria-label="step one">1️</span>Enter your last name exactly as it appears in your Zoom Chat History</p>
       <div className="name-label-div">
         <label htmlFor="lastname">Last name:</label>
         <input type="text" name="lastname" placeholder="Patel" value={lastname} onChange={(event)=>updateLastname(event.target.value)}/>
       </div>
       <br/>
-      <p><span className="step">2</span>Copy-paste the contents from your saved "meeting_saved_chat.txt" file to the text area below</p>
+      
+      <p>
+        <span className="step" role="img" aria-label="step one">2</span>
+        Copy-paste the contents from your saved "meeting_saved_chat.txt" file to the text area below
+      </p>
+      <span className="step or">OR</span>
+      <p>
+        <span className="step" role="img" aria-label="step two">2</span>
+        Select a file from your computer using the button below
+      </p>
+      <div className="file-upload-div">
+          <input 
+            className="file-upload-input"
+            onChange={(event)=>fileSelectedHandler(event.target.files[0])}
+            type="file"
+            name="text"
+            multiple={true}
+            accept="text/plain"/>
+          <span className="file-upload-span">Upload file</span>
+        </div>
       <textarea ref={textareaRef} className="data" name="message"></textarea> 
       <br/>
       <div className="step-para-3-div">
-        <p ><span className="step">3</span>{`Click on the Submit button below, and use the other buttons as per your need. The results
+        <p ><span className="step" role="img" aria-label="step three">3</span>{`Click on the Submit button below, and use the other buttons as per your need. The results
         should be displayed above Step 1.`}</p>
         <button className="submit-button" type="button" onClick={()=>sortByParticipation()}>Sort by Participation</button>
         <button className="submit-button" type="button" onClick={()=>sortAlphabetically()}>Sort Alphabetically</button>
