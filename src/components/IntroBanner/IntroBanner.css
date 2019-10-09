@@ -1,5 +1,5 @@
 .readable-background {
-  background: lightgrey;
+  background: #e8e8e8;
   width: 90vw;
   box-sizing: border-box;
   margin-top: 60px;
@@ -8,7 +8,7 @@
 }
 
 .dropdown-text {
-  background: lightskyblue;
+  background: rgb(200, 234, 255);
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
@@ -23,13 +23,14 @@
   margin: 0px 10px;
   border: 1px solid black;
   padding: 4px 10px;
+  background: #e8e8e8;
 }
 
 .extra-info {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: lightgrey;
+  background: #e8e8e8;
   box-sizing: border-box;
   padding: 20px;
   border-top: 1px solid gray;
