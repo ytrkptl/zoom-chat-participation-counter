@@ -1,6 +1,6 @@
 .readable-background {
   background: #e8e8e8;
-  width: 90vw;
+  width: 100vw;
   box-sizing: border-box;
   margin-top: 60px;
   display: grid;
@@ -8,7 +8,7 @@
 }
 
 .dropdown-text {
-  background: rgb(200, 234, 255);
+  background: lightskyblue;
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
