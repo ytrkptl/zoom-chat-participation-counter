@@ -1,8 +1,7 @@
 .readable-background {
   background: #e8e8e8;
-  width: 100vw;
+  width: 100%;
   box-sizing: border-box;
-  margin-top: 60px;
   display: grid;
   grid-template-rows: auto 1fr;
 }
