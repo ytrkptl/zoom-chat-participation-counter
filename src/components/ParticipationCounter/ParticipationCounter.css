@@ -120,6 +120,16 @@
   /* background: white; */
 }
 
+.file-upload-divs-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 90px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
 .file-upload-div {
   display: flex;
   position: relative;
@@ -127,7 +137,8 @@
   flex-direction: column;
   align-items: center;
   transition: all 0.3s ease;
-  width: 120px;
+  width: 200px;
+  height: 70px;
   box-sizing: border-box;
   margin: auto;
   margin-bottom: 10px;
@@ -141,7 +152,8 @@
   opacity: 0;
   padding: 10px;
   z-index: 1;
-  width: 120px;
+  width: 200px;
+  height: 70px;
   box-sizing: border-box;
 }
 
@@ -151,7 +163,7 @@
   z-index: 0;
   color: black;
   padding: 14px 10px;
-  width: 120px;
+  width: 200px;
   box-sizing: border-box;
   text-align: center;
 }

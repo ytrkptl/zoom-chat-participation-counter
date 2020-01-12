@@ -175,8 +175,10 @@ const ParticipationCounter = () => {
     reader.readAsText(somefile);
   };
 
-  const handleMultipleFilesReader = (event) => {
-    textareaContent = ""
+  const handleMultipleFilesReader = (event, uploadMultiple) => {
+    if (uploadMultiple) {
+      textareaContent = " "
+    }
     Object.values(event.target.files).forEach(value => {
       fileSelectedHandler(value)
     })
@@ -184,11 +186,8 @@ const ParticipationCounter = () => {
   }
 
   const scrollTo = hashName => {
-    let parentRect = document.body.getBoundingClientRect();
     let element = document.getElementById(hashName);
-    let rect = element.getBoundingClientRect();
-    let offset = rect.top - parentRect.top - 110;
-    window.scrollTo(0, offset);
+    element.scrollIntoView()
   };
 
   const showError = (text, element) => {
@@ -357,19 +356,32 @@ const ParticipationCounter = () => {
           <div className="step-and-text-div step-div-2">
             <span className="step">Step 2</span>
             <p className="step-para-1">
-              Select a file from your computer using the button below
+              Select a file from your computer using a button below
             </p>
           </div>
-          <div className="file-upload-div">
-            <input
-              className="file-upload-input"
-              onChange={event => handleMultipleFilesReader(event)}
-              type="file"
-              name="text"
-              multiple={true}
-              accept="text/plain"
-            />
-            <span className="file-upload-span">Upload file</span>
+          <div className="file-upload-divs-parent">
+            <div className="file-upload-div">
+              <input
+                className="file-upload-input"
+                onChange={event => handleMultipleFilesReader(event, false)}
+                type="file"
+                name="text"
+                multiple={false}
+                accept="text/plain"
+              />
+              <span className="file-upload-span">Upload files one by one from different folders</span>
+            </div>
+            <div className="file-upload-div">
+              <input
+                className="file-upload-input"
+                onChange={event => handleMultipleFilesReader(event, true)}
+                type="file"
+                name="text"
+                multiple={true}
+                accept="text/plain"
+              />
+              <span className="file-upload-span">Upload multiple files from same folder</span>
+            </div>
           </div>
           <div className="textarea-div" id="textarea-div-id">
             <textarea
