@@ -12,12 +12,12 @@ const ParticipationCounter = () => {
   const checkboxRef = useRef()
   const lastnameRef = useRef()
   const textareaRef = useRef()
-  let textareaContent = ""
+  const [textareaContent, updateTextareaContent] = useState("")
 
   // source: http://chrisjopa.com/2016/04/21/counting-word-frequencies-with-javascript/
   const readData = () => {
     // if (err) throw err;
-    let data = textareaRef.current.value;
+    let data = textareaContent;
     if (data === null || data === undefined || data === "") {
       return;
     }
@@ -33,9 +33,7 @@ const ParticipationCounter = () => {
     let wordmappp = createWordMap(resultsArray);
     let anotherArray = sortByCount(wordmappp);
     updateSortedArray(anotherArray);
-    document
-      .getElementById("lastname-input")
-      .classList.remove("required-highlight");
+    lastnameRef.current.classList.remove("required-highlight");
     updateLastnameError(null);
     showResults(true);
 
@@ -116,22 +114,9 @@ const ParticipationCounter = () => {
   };
 
   const sortAlphabetically = async () => {
-    new Promise((resolve, reject) => {
-      let hmm = readData();
-      if (hmm) {
-        let sortedAlphabetically = hmm.sort(dynamicSort("name"));
-        updateSortedArray(sortedAlphabetically);
-        resolve(true);
-      } else {
-        reject(false);
-      }
-    })
-      .then(value => {
-        if (value) {
-          scrollTo("table-div-id");
-        }
-      })
-      .catch(err => console.log(err));
+    const data = readData();
+    const alphabetizeIt = data.sort(dynamicSort("name"));
+    updateSortedArray(alphabetizeIt)
   };
 
   const hasCertainPattern = data => {
@@ -147,7 +132,7 @@ const ParticipationCounter = () => {
   };
 
   const clearTextArea = () => {
-    textareaRef.current.value = ""
+    updateTextareaContent("")
   };
 
   const clearResults = () => {
@@ -170,14 +155,15 @@ const ParticipationCounter = () => {
     let reader = new FileReader();
     reader.onloadend = () => {
       const content = reader.result;
-      textareaRef.current.value = textareaRef.current.value + content
+      let text = textareaRef.current.value + content
+      updateTextareaContent(text)
     }
     reader.readAsText(somefile);
   };
 
   const handleMultipleFilesReader = (event, uploadMultiple) => {
     if (uploadMultiple) {
-      textareaContent = " "
+      // textareaRef.current.value = ""
     }
     Object.values(event.target.files).forEach(value => {
       fileSelectedHandler(value)
@@ -193,14 +179,10 @@ const ParticipationCounter = () => {
   const showError = (text, element) => {
     if (text === null && element === "name-label-div-id") {
       updateLastnameError(null);
-      document
-        .getElementById("lastname-input")
-        .classList.remove("required-highlight");
+      lastnameRef.current.classList.remove("required-highlight");
     } else if (element === "name-label-div-id") {
       updateLastnameError(text);
-      document
-        .getElementById("lastname-input")
-        .classList.add("required-highlight");
+      lastnameRef.current.classList.add("required-highlight");
       scrollTo(element);
     } else if (text === null && element === "textarea-div-id") {
       updateTextareaError(null);
@@ -245,7 +227,8 @@ const ParticipationCounter = () => {
         showError("Text is required", "textarea-div-id");
         reject(false);
       } else {
-        textareaRef.current.value = text;
+        // textareaRef.current.value = text;
+        updateTextareaContent(text)
         resolve(true);
       }
     })
