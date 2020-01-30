@@ -169,6 +169,8 @@ const ParticipationCounter = () => {
       fileSelectedHandler(value)
     })
     event.target.value = ""
+
+    scrollTo("table-div-id");
   }
 
   const scrollTo = hashName => {
