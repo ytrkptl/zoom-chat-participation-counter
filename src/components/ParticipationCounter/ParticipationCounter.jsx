@@ -140,7 +140,7 @@ const ParticipationCounter = () => {
     updateSortedArray(null);
   };
 
-  const clearAll = () => {
+  const resetAll = () => {
     clearTextArea();
     clearResults();
     updateLastname("");
@@ -161,16 +161,11 @@ const ParticipationCounter = () => {
     reader.readAsText(somefile);
   };
 
-  const handleMultipleFilesReader = (event, uploadMultiple) => {
-    if (uploadMultiple) {
-      // textareaRef.current.value = ""
-    }
+  const handleMultipleFilesReader = (event) => {
     Object.values(event.target.files).forEach(value => {
       fileSelectedHandler(value)
     })
     event.target.value = ""
-
-    scrollTo("table-div-id");
   }
 
   const scrollTo = hashName => {
@@ -260,6 +255,7 @@ const ParticipationCounter = () => {
     await updateTextareaHandler(textareaRef.current.value);
     await updateLastnameHandler(lastname)
       .then(sortAlphabetically())
+      .then(scrollTo("table-div-id"))
       .catch(err => console.log(err));
   };
 
@@ -348,7 +344,7 @@ const ParticipationCounter = () => {
             <div className="file-upload-div">
               <input
                 className="file-upload-input"
-                onChange={event => handleMultipleFilesReader(event, false)}
+                onChange={event => handleMultipleFilesReader(event)}
                 type="file"
                 name="text"
                 multiple={false}
@@ -359,7 +355,7 @@ const ParticipationCounter = () => {
             <div className="file-upload-div">
               <input
                 className="file-upload-input"
-                onChange={event => handleMultipleFilesReader(event, true)}
+                onChange={event => handleMultipleFilesReader(event)}
                 type="file"
                 name="text"
                 multiple={true}
@@ -405,11 +401,11 @@ const ParticipationCounter = () => {
               Clear Text Area
             </button>
             <button
-              className="clear-all-button"
+              className="reset-all-button"
               type="button"
-              onClick={() => clearAll()}
+              onClick={() => resetAll()}
             >
-              Clear All
+              Reset
             </button>
           </div>
         </div>

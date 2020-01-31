@@ -23,14 +23,16 @@
 .buttons-above-table button {
   background: lightcoral;
   margin: 10px;
+  padding: 10px;
   height: 40px;
-  width: auto;
+  width: 140px;
   border: none;
 }
 
 .clear-results-button {
   background: lightcoral;
   margin: 10px;
+  padding: 10px;
   height: 40px;
   width: auto;
   border: none;
@@ -176,6 +178,7 @@
 
 .submit-button {
   margin: 10px;
+  padding: 10px;
   height: 40px;
   width: auto;
   border: none;
@@ -184,13 +187,15 @@
 
 .clear-textarea-button {
   margin: 10px;
+  padding: 10px;
   height: 40px;
   width: auto;
   border: none;
 }
 
-.clear-all-button {
+.reset-all-button {
   margin: 10px;
+  padding: 10px;
   height: 40px;
   width: auto;
   border: none;
