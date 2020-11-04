@@ -52,4 +52,4 @@ Note that without online articles, StackOverflow, or Google search, none of this
 
 In the future, if the Zoom Chat output file changes, my App may break again and I'll have to update the code once again. This will probably happen as I requested Zoom to add some features this morning and they were nice enough to add it to their features list. If the features get implemented, then there will be more work for me to do as well.
 
-### By Yatrik Patel, November 4, 2020.
+- By Yatrik Patel, November 4, 2020.
