@@ -124,9 +124,9 @@ const ParticipationCounter = () => {
     let someArray = [];
     let fromIndex = result[0].indexOf("From");
     for (let i = 0; i < result.length; i++) {
-      let teacherNameIndex = result[i].indexOf(lastname) + lastname.length;
-      let sub = result[i].substring(fromIndex, teacherNameIndex);
-      someArray.push(sub);
+      let sub = result[i].substr(fromIndex)
+      sub = sub.substr(0,sub.indexOf(":"))
+      if(sub!=="") someArray.push(sub);
     }
     return someArray;
   };
