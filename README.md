@@ -38,8 +38,18 @@ But wait, what if I allow students to chat with everyone, both publicly and priv
 
 - `hh:mm:ss From Sender to Receiver(Direct Message) : message`
 
-In either case, what I need to achieve now is first to be able to separate the text content at the end of each line, then extract a substring that begins with the word "From" and ends at the colon character, ":". Once this is achieved, I have to do the hard part of sorting and counting occurrences of each string within say an array or an object. I won't get into the explanation here but the code can be found on my GitHub. Note that without online articles, StackOverflow, or Google search, none of this would have been possible. Probably the biggest thanks I owe to is Andrei Neagoie and his courses on ZeroToMastery or Udemy.
+In either case, what I need to achieve now is first to be able to separate the text content at the end of each line, then extract a substring that begins with the word "From" and ends at the colon character, ":". Once this is achieved, I have to do the hard part of sorting and counting occurrences of each string within say an array or an object. I won't get into the explanation here but the code and the site can be found at the following links:
+
+Here's the GitHub repository:
+
+<https://github.com/ytrkptl/zoom-chat-participation-counter>
+
+Here's the link to site itself:
+
+<https://participation-counter.netlify.app/>
+
+Note that without online articles, StackOverflow, or Google search, none of this would have been possible. Probably the biggest thanks I owe to is Andrei Neagoie and his courses on ZeroToMastery or Udemy.
 
 In the future, if the Zoom Chat output file changes, my App may break again and I'll have to update the code once again. This will probably happen as I requested Zoom to add some features this morning and they were nice enough to add it to their features list. If the features get implemented, then there will be more work for me to do as well.
 
-- By Yatrik Patel, November 4, 2020.
+### By Yatrik Patel, November 4, 2020.
