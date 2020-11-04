@@ -1,0 +1,11 @@
+10:20:35	 From  Yatrik Patel : hi john
+10:20:43	 From  John Doe  to  Yatrik Patel(Direct Message) : sup
+10:21:00	 From  John Doe : sup yall
+10:21:25	 From  Yatrik Patel : I am doing good. what bout y'all?
+10:21:33	 From  John Doe : good so far
+10:21:38	 From  Yatrik Patel : ready for class
+10:21:45	 From  John Doe  to  Yatrik Patel(Direct Message) : yup
+10:21:49	 From  Yatrik Patel  to  John Doe(Direct Message) : me too
+10:21:53	 From  Yatrik Patel : bye
+10:21:56	 From  John Doe  to  Yatrik Patel(Direct Message) : bye
+10:22:02	 From  John Doe : bye all
