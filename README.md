@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Zoom Chat Participation Counter
 
-## Available Scripts
+I created this App a while back to help count the number of times a participant had replied or chatted privately with the teacher. It worked great as I always kept Zoom Participation option to (participate with) "Host Only." By the way, Zoom saves the chat messages in a .txt file which gets saved to the hosts's computer. At the time of making this site, Zoom used to save the text output as follows:
 
-In the project directory, you can run:
+![old chat](/src/assets/old-chat.png)
 
-### `npm start`
+Prior to this site, I'd have to copy the text from that file and paste it in an Excel file, then "Sort A to Z" using the second column in Excel (the second column is where the text file would have things like "From Person A to Person B, etc." ).
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![old chat](/src/assets/old-chat-excel.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+This worked great as all messages to myself (the host) would end up having the following format:
 
-### `npm test`
+- `hh:mm:ss From Sender to Host: message`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Once sorted, I would use the "countA" function in excel to count how many times a participant chatted with me. I'd have to do it manually for however many participants were in the meeting. Doing so would take about 5 minutes for a single meeting.
 
-### `npm run build`
+But what about the whole week's participation? You'd have to open each .txt file by navigating to it, copying and pasting its contents to the Excel file, then Sorting A to Z in the Excel file, then count using the "countA" function in Excel. It would still take about 5 - 7 minutes overall.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+However, if you had more classes, students, or meetings that you wanted to account for, this 5 minutes would just kept increasing. Teachers don't have that type of time and shouldn't have to go through all this trouble. Hence the App I created did all this in just a couple of minutes. If the amount of classes or meetings increased, then the amount of time would increase a little bit, but the number of students in class would not have any affect on it. Yes, having to do that a hundred times in excel, especially when the # of times someone chats varies is very time consuming.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+To do this, I'd have to separate the text content at the end of each line. Then, I'd have to extract a substring that begins with the word "From" and ends at the "indexOf(hostName)" as all messages were private, i.e. were only sent to the host, and as all messages followed the format mentioned above. In my case, all teachers's host name is their first and last name by default, so I was able to ask them for their lastname exactly the way it appeared in the text file, and only then prompt them to upload the text files. Then, I'd have to do the harder work of sorting and counting.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Anyways, recently when I tried to use this App, things weren't working. What could have gone wrong? So, I was back at the terminal this morning trying to debug (I have a funny story about debugging that I may be sharing later) this App. It seems that Zoom now outputs chat contents into a text (.txt) file that looks like the following:
 
-### `npm run eject`
+![old chat](/src/assets/new-chat.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+It now has the following format:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `hh:mm:ss From Sender to Host: message`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+But wait, what if I allow students to chat with everyone, both publicly and privately?
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Well, here is the format for public chat messages:
 
-## Learn More
+- `hh:mm:ss From Sender : message`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Here is the format for private chat messages:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `hh:mm:ss From Sender to Receiver(Direct Message) : message`
 
-### Code Splitting
+In either case, what I need to achieve now is first to be able to separate the text content at the end of each line, then extract a substring that begins with the word "From" and ends at the colon character, ":". Once this is achieved, I have to do the hard part of sorting and counting occurrences of each string within say an array or an object. I won't get into the explanation here but the code can be found on my GitHub. Note that without online articles, StackOverflow, or Google search, none of this would have been possible. Probably the biggest thanks I owe to is Andrei Neagoie and his courses on ZeroToMastery or Udemy.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+In the future, if the Zoom Chat output file changes, my App may break again and I'll have to update the code once again. This will probably happen as I requested Zoom to add some features this morning and they were nice enough to add it to their features list. If the features get implemented, then there will be more work for me to do as well.
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- By Yatrik Patel, November 4, 2020.
