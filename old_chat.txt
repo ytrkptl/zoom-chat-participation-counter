@@ -1,0 +1,95 @@
+08:17:59	 From  SOMEe GUY  to  Yatrik Patel(Privately) : hello
+08:18:29	 From  JOHN DOE  to  Yatrik Patel(Privately) : Good morning
+08:18:40	 From  Yatrik Patel  to  SOME GUY(Privately) : hi
+08:18:47	 From  Yatrik Patel  to  JOHN DOE(Privately) : good morning
+08:18:58	 From  SOME GUY  to  Yatrik Patel(Privately) : That will not let us type in the announcement for the bell ringer 
+08:19:13	 From  SOME GUY  to  Yatrik Patel(Privately) : Atleast not me
+08:19:18	 From  Yatrik Patel  to  SOME GUY(Privately) : did you click on the link
+08:19:27	 From  SOME GUY  to  Yatrik Patel(Privately) : What link?
+08:19:55	 From  SOME GUY  to  Yatrik Patel(Privately) : never mind
+08:19:58	 From  Yatrik Patel  to  SOME GUY(Privately) : ok
+08:20:27	 From  SOME GUY  to  Yatrik Patel(Privately) : Still can not type
+08:21:24	 From  Yatrik Patel  to  SOME GUY(Privately) : you have to click on submit assignment and then it should let you type
+08:21:35	 From  SOME GUY  to  Yatrik Patel(Privately) : Yeah it does
+08:21:42	 From  Yatrik Patel  to  SOME GUY(Privately) : ok
+08:22:11	 From  JOHN DOE  to  Yatrik Patel(Privately) : Done.
+08:24:25	 From  Room XYZ FACILITATOR Facilitator, AWESOME County Schools SOMESTATE TA : ARNOLD SCHWAR is present but her computer isn't working
+08:25:01	 From  Yatrik Patel  to  Room XYZ FACILITATOR Facilitator, AWESOME County Schools SOMESTATE TA(Privately) : ok no problem. she can do the bell-ringer later I guess
+08:26:50	 From  COOL DUDE  to  Yatrik Patel(Privately) : good morning calZONE is present
+08:26:55	 From  JANE DOE  to  Yatrik Patel(Privately) : Good morning, Pizzaguy is present 
+08:27:38	 From  NICK THEMAN  to  Yatrik Patel(Privately) : me and her sharing computer
+08:30:25	 From  YOUCAN DOIT  to  Yatrik Patel(Privately) : JOHN is present
+08:30:27	 From  JOHN DOE  to  Yatrik Patel(Privately) : The class is too loud to hear you.
+08:31:02	 From  JOHN DOE  to  Yatrik Patel(Privately) : they are calming down
+08:31:03	 From  YOUCAN DOIT  to  Yatrik Patel(Privately) : the laptop just doesn't have a camera
+08:33:40	 From  SOME GUY  to  Yatrik Patel(Privately) : I think they mean their computer doesn't have a camera, not yours
+08:34:51	 From  SOME GUY  to  Yatrik Patel(Privately) : You were just cutting out
+08:34:51	 From  JOHN DOE  to  Yatrik Patel(Privately) : hold on
+08:35:02	 From  JOHN DOE  to  Yatrik Patel(Privately) : theres some chaos
+08:35:54	 From  JOHN DOE  to  Yatrik Patel(Privately) : they saw a bug and now they are all flipping out
+08:36:52	 From  Yatrik Patel  to  Room XYZ FACILITATOR Facilitator, AWESOME County Schools SOMESTATE TA(Privately) : hi there
+08:37:05	 From  JOHN DOE  to  Yatrik Patel(Privately) : she stepped out
+08:37:12	 From  GEORGE WASHINGTON  to  Yatrik Patel(Privately) : she steped out
+08:37:19	 From  COOL STUFF  to  Yatrik Patel(Privately) : She stepped out for a minute
+08:37:20	 From  SOME GUY  to  Yatrik Patel(Privately) : All I can remember that we did was distance formula and midpoint and at some point in time, we did angles but we didn't go over it much
+08:38:12	 From  SOME GUY  to  Yatrik Patel(Privately) : Yeah but only for about 3 days to a school week I believe
+08:38:29	 From  SOME GUY  to  Yatrik Patel(Privately) : year long
+08:38:29	 From  JOHN DOE  to  Yatrik Patel(Privately) : year round
+08:40:57	 From  SOME GUY  to  Yatrik Patel(Privately) : Somewhat but not much
+08:41:10	 From  SOME GUY  to  Yatrik Patel(Privately) : But that is me, not the rest of the class
+08:41:23	 From  SOME GUY  to  Yatrik Patel(Privately) : She said she is about to log in
+08:41:29	 From  COOL STUFF  to  Yatrik Patel(Privately) : She's is about to log in
+08:41:46	 From  Room XYZ FACILITATOR Facilitator, AWESOME County Schools SOMESTATE TA  to  Yatrik Patel(Privately) : she's about to log in
+08:42:55	 From  Yatrik Patel  to  Room XYZ FACILITATOR Facilitator, AWESOME County Schools SOMESTATE TA(Privately) : hi there, it would be great if you can tell me where they stopped with the last teacher.
+08:43:19	 From  SOME GUY  to  Yatrik Patel(Privately) : I can hear you
+08:44:51	 From  SOME GUY  to  Yatrik Patel(Privately) : I don't
+08:44:54	 From  Room XYZ FACILITATOR Facilitator, AWESOME County Schools SOMESTATE TA  to  Yatrik Patel(Privately) : she said she will check in a few , she's doing paperwork at the moment
+08:45:18	 From  SOME GUY  to  Yatrik Patel(Privately) : Maybe correspondence
+08:45:41	 From  SOME GUY  to  Yatrik Patel(Privately) : Could you show us a problem
+08:51:39	 From  BOB BUILDER  to  Yatrik Patel(Privately) : do we write these?
+08:52:46	 From  SOME GUY  to  Yatrik Patel(Privately) : If it shows a mic, that means they have one or the computer has one but if it does not, then that means they do not have a mic.
+08:53:07	 From  BOB BUILDER  to  Yatrik Patel(Privately) : we got these already I was just making sure
+08:53:13	 From  JOHN DOE  to  Yatrik Patel(Privately) : we have wrote these
+08:53:24	 From  BRILLIANT BUNCH  to  Yatrik Patel(Privately) : we leave at 8:05
+08:54:26	 From  BRILLIANT BUNCH  to  Yatrik Patel(Privately) : our other teacher already made us write these down
+08:55:29	 From  SOME GUY  to  Yatrik Patel(Privately) : Yes
+08:55:30	 From  COOL STUFF  to  Yatrik Patel(Privately) : yes
+08:55:33	 From  SOME GUY  to  Yatrik Patel(Privately) : Yes
+08:55:34	 From  BRILLIANT BUNCH  to  Yatrik Patel(Privately) : yes
+08:55:34	 From  JOHN DOE  to  Yatrik Patel(Privately) : yes
+08:55:34	 From  YOUCAN DOIT  to  Yatrik Patel(Privately) : yes
+08:55:35	 From  COOL STUFF  to  Yatrik Patel(Privately) : yes
+08:55:35	 From  ARNOLD SCHWAR  to  Yatrik Patel(Privately) : tes
+08:55:39	 From  ARNOLD SCHWAR  to  Yatrik Patel(Privately) : yes
+08:55:40	 From  COOL STUFF  to  Yatrik Patel(Privately) : Yes
+08:55:49	 From  SOME GUY  to  Yatrik Patel(Privately) : yes
+08:55:50	 From  BRILLIANT BUNCH  to  Yatrik Patel(Privately) : yes
+08:55:51	 From  COOL STUFF  to  Yatrik Patel(Privately) : yes
+08:55:52	 From  ARNOLD SCHWAR  to  Yatrik Patel(Privately) : yes
+08:55:59	 From  BRILLIANT BUNCH  to  Yatrik Patel(Privately) : yes
+08:56:03	 From  COOL STUFF  to  Yatrik Patel(Privately) : yep
+08:56:05	 From  BRILLIANT BUNCH  to  Yatrik Patel(Privately) : yes
+08:56:05	 From  SOME GUY  to  Yatrik Patel(Privately) : yes
+08:56:06	 From  YOUCAN DOIT  to  Yatrik Patel(Privately) : yes
+08:56:07	 From  COOL STUFF  to  Yatrik Patel(Privately) : yuh
+08:56:13	 From  BRILLIANT BUNCH  to  Yatrik Patel(Privately) : yes
+08:56:13	 From  COOL STUFF  to  Yatrik Patel(Privately) : yuh
+08:56:15	 From  SOME GUY  to  Yatrik Patel(Privately) : I think so
+08:56:17	 From  BRILLIANT BUNCH  to  Yatrik Patel(Privately) : yes
+08:56:18	 From  COOL STUFF  to  Yatrik Patel(Privately) : yuh
+08:56:19	 From  JOHN DOE  to  Yatrik Patel(Privately) : yes
+08:56:36	 From  GEORGE WASHINGTON  to  Yatrik Patel(Privately) : no for circle
+08:56:38	 From  COOL STUFF  to  Yatrik Patel(Privately) : We didn't do circle
+08:56:40	 From  JANE DOE  to  Yatrik Patel(Privately) : we never learned circle 
+08:56:41	 From  COOL DUDE  to  Yatrik Patel(Privately) : we haven't done circle
+08:56:41	 From  SOME GUY  to  Yatrik Patel(Privately) : I think we did all but circle
+09:01:49	 From  JOHN DOE  to  Yatrik Patel(Privately) : yesss
+09:01:50	 From  GEORGE WASHINGTON  to  Yatrik Patel(Privately) : yes
+09:01:56	 From  SOME GUY  to  Yatrik Patel(Privately) : I been ready since Monday
+09:01:57	 From  SPONGEBOB SQUAREPANTS  to  Yatrik Patel(Privately) : yes sir
+09:02:03	 From  SOME GUY  to  Yatrik Patel(Privately) : Not sure
+09:02:05	 From  JOHN DOE  to  Yatrik Patel(Privately) : pride festival
+09:02:05	 From  GEORGE WASHINGTON  to  Yatrik Patel(Privately) : im getting my new glasses today
+09:02:07	 From  JOHN DOE  to  Yatrik Patel(Privately) : work
+09:02:29	 From  ARNOLD SCHWAR  to  Yatrik Patel(Privately) : byeeeeeee
+09:02:32	 From  SOME GUY  to  Yatrik Patel(Privately) : Goodbye
