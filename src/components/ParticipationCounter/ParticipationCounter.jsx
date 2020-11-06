@@ -4,13 +4,13 @@ import "./ParticipationCounter.css";
 
 const ParticipationCounter = () => {
   const [sortedArray, updateSortedArray] = useState(null);
-  const [lastname, updateLastname] = useState("");
+  const [hostname, updateHostname] = useState("");
   const [results, showResults] = useState(false);
-  const [lastnameError, updateLastnameError] = useState(null);
+  const [hostnameError, updateHostnameError] = useState(null);
   const [textareaError, updateTextareaError] = useState(null);
   const [stepCounter, setStepCounter] = useState(1);
   const checkboxRef = useRef()
-  const lastnameRef = useRef()
+  const hostnameRef = useRef()
   const textareaRef = useRef()
   const [textareaContent, updateTextareaContent] = useState("")
 
@@ -21,7 +21,7 @@ const ParticipationCounter = () => {
     if (data === null || data === undefined || data === "") {
       return;
     }
-    if (lastname !== "" && data.indexOf(`${lastname}`) === -1) {
+    if (hostname !== "" && data.indexOf(`${hostname}`) === -1) {
       showError(
         "No such last name was found in the uploaded text or file",
         "name-label-div-id"
@@ -33,8 +33,8 @@ const ParticipationCounter = () => {
     let wordmappp = createWordMap(resultsArray);
     let anotherArray = sortByCount(wordmappp);
     updateSortedArray(anotherArray);
-    lastnameRef.current.classList.remove("required-highlight");
-    updateLastnameError(null);
+    hostnameRef.current.classList.remove("required-highlight");
+    updateHostnameError(null);
     showResults(true);
 
     return anotherArray;
@@ -119,6 +119,17 @@ const ParticipationCounter = () => {
     updateSortedArray(alphabetizeIt)
   };
 
+  // this function will filter the messages and return only the ones sent to the host only
+  const filterMessagesToHostOnly = () => {
+    const data = readData();
+    let filteredArray = data.filter((el)=>
+      el.name.includes(`to  Yatrik ${hostname}(Direct Message)`) || el.name.includes(`to  Yatrik ${hostname}(Privately)`)
+    )
+    const alphabetizeIt = filteredArray.sort(dynamicSort("name"));
+    console.log(alphabetizeIt)
+    updateSortedArray(alphabetizeIt)
+  }
+
   const hasCertainPattern = data => {
     const result = splitByLine(data);
     let someArray = [];
@@ -143,12 +154,12 @@ const ParticipationCounter = () => {
   const resetAll = () => {
     clearTextArea();
     clearResults();
-    updateLastname("");
-    updateLastnameError("");
+    updateHostname("");
+    updateHostnameError("");
     setStepCounter(1)
     checkboxRef.current.checked = false
-    lastnameRef.current.readOnly = false
-    lastnameRef.current.classList.remove("lastname-disable")
+    hostnameRef.current.readOnly = false
+    hostnameRef.current.classList.remove("hostname-disable")
   };
 
   const fileSelectedHandler = somefile => {
@@ -175,11 +186,11 @@ const ParticipationCounter = () => {
 
   const showError = (text, element) => {
     if (text === null && element === "name-label-div-id") {
-      updateLastnameError(null);
-      lastnameRef.current.classList.remove("required-highlight");
+      updateHostnameError(null);
+      hostnameRef.current.classList.remove("required-highlight");
     } else if (element === "name-label-div-id") {
-      updateLastnameError(text);
-      lastnameRef.current.classList.add("required-highlight");
+      updateHostnameError(text);
+      hostnameRef.current.classList.add("required-highlight");
       scrollTo(element);
     } else if (text === null && element === "textarea-div-id") {
       updateTextareaError(null);
@@ -193,17 +204,17 @@ const ParticipationCounter = () => {
         .classList.add("required-highlight");
       scrollTo(element);
     } else {
-      updateLastnameError(null);
+      updateHostnameError(null);
       updateTextareaError(null);
     }
     return;
   };
 
-  const updateLastnameHandler = lastname => {
+  const updateHostnameHandler = hostname => {
     return new Promise((resolve, reject) => {
-      updateLastname(lastname);
-      if (lastname === "") {
-        showError("Lastname is required", "name-label-div-id");
+      updateHostname(hostname);
+      if (hostname === "") {
+        showError("Hostname is required", "name-label-div-id");
         reject(false);
         return;
       } else {
@@ -238,22 +249,22 @@ const ParticipationCounter = () => {
   };
 
   const updateCheckboxStatus = () => {
-    if (lastname !== "" && lastname !== undefined && lastname !== null && checkboxRef.current.checked) {
+    if (hostname !== "" && hostname !== undefined && hostname !== null && checkboxRef.current.checked) {
       showError(null, "textarea-div-id");
-      lastnameRef.current.readOnly = true
-      lastnameRef.current.classList.add("lastname-disable")
+      hostnameRef.current.readOnly = true
+      hostnameRef.current.classList.add("hostname-disable")
       setStepCounter(2)
     } else {
-      showError("Lastname is required", "name-label-div-id");
-      lastnameRef.current.readOnly = false
-      lastnameRef.current.classList.remove("lastname-disable")
+      showError("Hostname is required", "name-label-div-id");
+      hostnameRef.current.readOnly = false
+      hostnameRef.current.classList.remove("hostname-disable")
       setStepCounter(1)
     }
   }
 
   const handleSubmit = async () => {
     await updateTextareaHandler(textareaRef.current.value);
-    await updateLastnameHandler(lastname)
+    await updateHostnameHandler(hostname)
       .then(sortAlphabetically())
       .then(scrollTo("table-div-id"))
       .catch(err => console.log(err));
@@ -270,6 +281,9 @@ const ParticipationCounter = () => {
             </button>
             <button type="button" onClick={() => sortByParticipation()}>
               Sort by Participation
+            </button>
+            <button type="button" onClick={() => filterMessagesToHostOnly()}>
+              Show Messages to Host only
             </button>
           </div>
           <table>
@@ -297,29 +311,29 @@ const ParticipationCounter = () => {
       <div className="step-and-text-div">
         <span className="step">Step 1</span>
         <p className="step-para-1">
-          Enter your lastname exactly as it appears in your Zoom Chat History
+          Enter your hostname exactly as it appears in your Zoom Chat History
         </p>
       </div>
       <form>
         <div className="name-label-div" id="name-label-div-id">
-          <label htmlFor="lastname">Lastname</label>
+          <label htmlFor="hostname">Hostname</label>
           <input
-            ref={lastnameRef}
+            ref={hostnameRef}
             type="text"
             required
-            name="lastname"
-            id="lastname-input"
-            placeholder="Your Lastname"
-            value={lastname}
-            onChange={event => updateLastnameHandler(event.target.value)}
+            name="hostname"
+            id="hostname-input"
+            placeholder="Your Hostname"
+            value={hostname}
+            onChange={event => updateHostnameHandler(event.target.value)}
           />
-          {lastnameError && (
-            <div className="lastname-error">{lastnameError}</div>
+          {hostnameError && (
+            <div className="hostname-error">{hostnameError}</div>
           )}
         </div>
         <div className="checkbox-div">
-          <input ref={checkboxRef} type="checkbox" id="lastname-confirm" name="lastname-confirm" onChange={() => updateCheckboxStatus()} />
-          <label htmlFor="lastname-confirm">{`I've entered my lastname exactly as it appears in my zoom chat history.`}</label>
+          <input ref={checkboxRef} type="checkbox" id="hostname-confirm" name="hostname-confirm" onChange={() => updateCheckboxStatus()} />
+          <label htmlFor="hostname-confirm">{`I've entered my hostname exactly as it appears in my zoom chat history.`}</label>
         </div>
         <br />
         <div className={`${stepCounter === 1 && "stepClass2"}`}>
@@ -378,8 +392,6 @@ const ParticipationCounter = () => {
               <div className="textarea-error">{textareaError}</div>
             )}
           </div>
-
-          <br />
           <div className="step-and-text-div step-div-3">
             <span className="step">Step 3</span>
             <p className="step-para-1">{`Click on the Submit button below, and use the other 
