@@ -32,13 +32,10 @@ const IntroBanner = () => {
       </div>
       <div className="extra-info" ref={extraInfoRef} style={{display: `${dropdownDisplay}`}}>
         <span className="intro-span">Have you used the Zoom App before?</span>
-        <span className="intro-span">Yes, I am referring to the video conferencing app found at the following site:</span>
         <a className="zoom-link" href="https://zoom.us/">https://zoom.us</a>
-        <span className="intro-span">Yes, the one whose logo is:</span>
         <img className="zoom-logo" alt='zoom-logo' src={zoomLogo}/>
-        <span className="intro-span">{`Just made this site to make our lives easier by allowing for a simple way to tell how 
-        many times did each participant chat with you (the host). The assumption here is that you only selected chatting with "host only"
-        option during the video conference.`}</span>
+        <span className="intro-span">If yes, then you may find this App to be interesting:</span>
+        <span className="intro-span">"This app helps count the number of times a participant chatted during the meeting <b>waaaay</b> faster than you would do manually in Excel. It also sorts the chat both alphabetically, and by participation. You can also filter messages that were sent to host only. The goal of this App is to help teachers use Zoom's chat log to count towards students' particpation in a quicker manner. This would be really helpful if you want to grade participation for a lot of meetings, classes, days, and students."</span>
       </div>
     </div>
   )
