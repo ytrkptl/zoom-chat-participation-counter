@@ -123,7 +123,7 @@ const ParticipationCounter = () => {
   const filterMessagesToHostOnly = () => {
     const data = readData();
     let filteredArray = data.filter((el)=>
-      el.name.includes(`to  Yatrik ${hostname}(Direct Message)`) || el.name.includes(`to  Yatrik ${hostname}(Privately)`)
+      el.name.includes(`to  ${hostname}(Direct Message)`) || el.name.includes(`to  ${hostname}(Privately)`)
     )
     const alphabetizeIt = filteredArray.sort(dynamicSort("name"));
     console.log(alphabetizeIt)
