@@ -14,10 +14,22 @@
   margin-bottom: 20px;
 }
 
+@media screen and (max-width: 600px) {
+  .table-div {
+    width: 90%;
+  }
+}
+
 .buttons-above-table {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  .buttons-above-table {
+    flex-direction: column;
+  }
 }
 
 .buttons-above-table button {
@@ -27,6 +39,9 @@
   height: 40px;
   width: 140px;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .clear-results-button {
@@ -58,6 +73,8 @@
 
 .step {
   margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
   padding: 4px 10px;
   background: lightskyblue;
   color: black;
@@ -95,12 +112,17 @@
 /* .name-label-div input[type=text]::placeholder {
   color: rgb(10, 10, 10);
 } */
+@media screen and (max-width: 600px) {
+  .name-label-div {
+    width: 90%;
+  }
+}
 
 .required-highlight {
   border: 2px solid red;
 }
 
-.lastname-error {
+.hostname-error {
   color: red;
   margin-top: 0;
   padding: 0;
@@ -132,7 +154,12 @@
   margin: auto;
   margin-bottom: 10px;
 }
-
+@media screen and (max-width: 600px) {
+  .file-upload-divs-parent {
+    width: 90%;
+    flex-direction: column;
+  }
+}
 .file-upload-div {
   display: flex;
   position: relative;
@@ -182,7 +209,7 @@
   height: 40px;
   width: auto;
   border: none;
-  background-color: #32CD32;
+  background-color: #32cd32;
 }
 
 .clear-textarea-button {
@@ -228,7 +255,6 @@ tr:nth-child(even) {
   background-color: lightgray;
 }
 
-
 th:first-child,
 td {
   border-right: 1px solid gray;
@@ -239,7 +265,7 @@ td {
   color: black;
 }
 
-.lastname-disable {
+.hostname-disable {
   opacity: 0.5;
   /* pointer-events: none; */
   cursor: not-allowed;
@@ -262,13 +288,24 @@ td {
   margin-left: 10px;
 }
 
-
-
+.buttons-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .buttons-div {
+    flex-direction: column;
+  }
+}
 @media screen and (max-width: 600px) {
   .step-and-text-div {
     align-items: flex-start;
   }
   .step-para-1 {
     margin-top: 6px;
+    margin-bottom: 36px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

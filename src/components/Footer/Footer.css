@@ -21,6 +21,12 @@
   align-items: center;
 }
 @media screen and (max-width: 500px) {
+  .footerChildDiv {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 500px) {
   .footerDiv {
     font-size: 12px;
   }
