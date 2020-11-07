@@ -12,11 +12,11 @@ This worked great as all messages to myself (the host) would end up having the f
 
 - `hh:mm:ss From Sender to Host: message`
 
-Once sorted, I would use the "countA" function in excel to count how many times a participant chatted with me. I'd have to do it manually for however many participants were in the meeting. Doing so would take about 5 minutes for a single meeting.
+Once sorted, I would use the "countA" function in Excel to count how many times a participant chatted with me. I'd have to do it manually for however many participants were in the meeting. Doing so would take about 5 minutes for a single meeting.
 
 But what about the whole week's participation? You'd have to open each .txt file by navigating to it, copying and pasting its contents to the Excel file, then Sorting A to Z in the Excel file, then count using the "countA" function in Excel. It would still take about 5 - 7 minutes overall.
 
-However, if you had more classes, students, or meetings that you wanted to account for, this 5 minutes would just kept increasing. Teachers don't have that type of time and shouldn't have to go through all this trouble. Hence the App I created did all this in just a couple of minutes. If the amount of classes or meetings increased, then the amount of time would increase a little bit, but the number of students in class would not have any affect on it. Yes, having to do that a hundred times in excel, especially when the # of times someone chats varies is very time consuming.
+However, if you had more classes, students, or meetings that you wanted to account for, this 5 minutes would just kept increasing. Teachers don't have that type of time and shouldn't have to go through all this trouble. Hence the App I created did all this in just a couple of minutes. If the amount of classes or meetings increased, then the amount of time would increase a little bit, but the number of students in class would have none or relatively little affect on it (i.e. comparatively speaking to doing in manually in Excel). Yes, having to do that a hundred times in Excel, especially when the number of times someone chats varies is very time consuming.
 
 To do this, I'd have to separate the text content at the end of each line. Then, I'd have to extract a substring that begins with the word "From" and ends at the "indexOf(lastname)" as all messages were private, i.e. were only sent to the host, and as all messages followed the format mentioned above. In my case, all teachers's host name is their first and last name by default, so I was able to ask them for their lastname exactly the way it appeared in the text file, and only then prompt them to upload the text files. Then, I'd have to do the harder work of sorting and counting.
 
