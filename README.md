@@ -6,33 +6,27 @@ To help count the number of times a participant has replied or chatted privately
 
 By the way, Zoom saves the chat messages in a .txt file which gets saved to the hosts's computer. At the time of making this site, Zoom used to save the text output as follows:
 
-  ![old chat](/src/assets/old-chat.png)
-
-  > Chat contents of Zoom's old chat .txt file
-
+![old chat](/src/assets/old-chat.png)
 
 ## Before this site
 
 I'd have to copy the text from the file above and paste it in an Excel file, then "Sort A to Z" using the second column in Excel (the second column is where the text file would have things like "From Person A to Person B, etc." ).
 
-  ![old chat](/src/assets/old-chat-excel.png)
-
-  > Copy pasting contents into Excel file results in two columns
+![old chat](/src/assets/old-chat-excel.png)
 
 This worked great as all messages to myself (the host) would end up having the following format:
 
-> `hh:mm:ss From Sender to Host: message`
+    `hh:mm:ss From Sender to Host: message`
 
 Once sorted, I would use the "countA" function in Excel to count how many times a participant chatted with me. I'd have to do it manually for however many participants were in the meeting. Doing so would take about 5 minutes for a single meeting.
 
-### How to count participation using Excel for the whole week
+### How to count participation for the whole week using Excel
 
 But what about the whole week's participation? You'd have to open each .txt file by navigating to it, copying and pasting its contents to the Excel file, then Sorting A to Z in the Excel file, then count using the "countA" function in Excel. It would still take about 5 - 7 minutes overall.
 
 ### Problems/Issues
 
 However, if you had more classes, students, or meetings that you wanted to account for, this 5 minutes would just kept increasing. Teachers don't have that type of time and shouldn't have to go through all this trouble. Hence the App I created did all this in just a couple of minutes. If the amount of classes or meetings increased, then the amount of time would increase a little bit, but the number of students in class would have none or relatively little affect on it (i.e. comparatively speaking to doing in manually in Excel). Yes, having to do that a hundred times in Excel, especially when the number of times someone chats varies is very time consuming.
-
 
 ## After this site
 
@@ -44,23 +38,21 @@ To do this, I'd have to separate the text content at the end of each line. Then,
 
 Anyways, recently when I tried to use this App, things weren't working. What could have gone wrong? So, I was back at the terminal this morning trying to debug (I have a funny story about debugging that I may be sharing later) this App. It seems that Zoom now outputs chat contents into a text (.txt) file that looks like the following:
 
-  ![new chat](/src/assets/new-chat.png)
-
-  > Chat contents of Zoom's new chat .txt file
+![new chat](/src/assets/new-chat.png)
 
 It now has the following format:
 
-> `hh:mm:ss From Sender to Host: message`
+    `hh:mm:ss From Sender to Host: message`
 
 But wait, what if I allow students to chat with everyone, both publicly and privately?
 
 Well, here is the format for public chat messages:
 
-> `hh:mm:ss From Sender : message`
+    `hh:mm:ss From Sender : message`
 
 Here is the format for private chat messages:
 
-> `hh:mm:ss From Sender to Receiver(Direct Message) : message`
+    `hh:mm:ss From Sender to Receiver(Direct Message) : message`
 
 In either case, what I need to achieve now is first to be able to separate the text content at the end of each line, then extract a substring that begins with the word "From" and ends at the colon character, ":". Once this is achieved, I have to do the hard part of sorting and counting occurrences of each string within say an array or an object. I won't get into the explanation here but the code and the site can be found at the following links:
 
