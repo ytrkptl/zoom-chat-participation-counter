@@ -12,7 +12,7 @@ By the way, Zoom saves the chat messages in a .txt file which gets saved to the 
 
 I'd have to copy the text from the file above and paste it in an Excel file, then "Sort A to Z" using the second column in Excel (the second column is where the text file would have things like "From Person A to Person B, etc." ).
 
-![old chat](/src/assets/old-chat-excel.svg)
+![old chat in Excel](/src/assets/old-chat-excel.svg)
 
 This worked great as all messages to myself (the host) would end up having the following format:
 
