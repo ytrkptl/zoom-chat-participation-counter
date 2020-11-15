@@ -4,7 +4,7 @@
 
 To help count the number of times a participant has replied or chatted privately with the teacher. It worked great as I always kept Zoom Participation option to (participate with) "Host Only."
 
-By the way, Zoom saves the chat messages in a .txt file which gets saved to the hosts's computer. At the time of making this site, Zoom used to save the text output as follows:
+By the way, Zoom saves the chat messages in a .txt file which gets saved to the hosts's computer. I am not sure if it works on free accounts, but I'm using it for work, which is probably a paid account. At the time of making this site, Zoom used to save the text output as follows:
 
 ![old chat](/src/assets/old-chat2.png)
 
@@ -67,5 +67,15 @@ Here's the link to site itself:
 Note that without online articles, StackOverflow, or Google search, none of this would have been possible. Probably the biggest thanks I owe to is Andrei Neagoie and his courses on ZeroToMastery or Udemy.
 
 In the future, if the Zoom Chat output file changes, my App may break again and I'll have to update the code once again. This will probably happen as I requested Zoom to add some features this morning and they were nice enough to add it to their features list. If the features get implemented, then there will be more work for me to do as well.
+
+If you can try out this App or site and provide some feedback, that would be greatly appreciated
+
+#### Credits
+
+- Some images above were made using Excalidraw
+
+- Image by Chris Montgomery from [Unsplash](https://unsplash.com/photos/smgTvepind4)
+
+- Image by No-longer-here from [Pixabay](https://pixabay.com/users/no-longer-here-19203/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1768845)
 
 #### - By Yatrik Patel, November 4, 2020
