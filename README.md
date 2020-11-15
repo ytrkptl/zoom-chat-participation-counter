@@ -7,6 +7,7 @@ To help count the number of times a participant has replied or chatted privately
 By the way, Zoom saves the chat messages in a .txt file which gets saved to the hosts's computer. At the time of making this site, Zoom used to save the text output as follows:
 
 > ![old chat](/src/assets/old-chat.png)
+
 > Chat contents of Zoom's old chat .txt file
 
 
@@ -15,6 +16,7 @@ By the way, Zoom saves the chat messages in a .txt file which gets saved to the 
 I'd have to copy the text from the file above and paste it in an Excel file, then "Sort A to Z" using the second column in Excel (the second column is where the text file would have things like "From Person A to Person B, etc." ).
 
 > ![old chat](/src/assets/old-chat-excel.png)
+
 > Copy pasting contents into Excel file results in two columns
 
 This worked great as all messages to myself (the host) would end up having the following format:
@@ -43,6 +45,7 @@ To do this, I'd have to separate the text content at the end of each line. Then,
 Anyways, recently when I tried to use this App, things weren't working. What could have gone wrong? So, I was back at the terminal this morning trying to debug (I have a funny story about debugging that I may be sharing later) this App. It seems that Zoom now outputs chat contents into a text (.txt) file that looks like the following:
 
 > ![new chat](/src/assets/new-chat.png)
+
 > Chat contents of Zoom's new chat .txt file
 
 It now has the following format:
