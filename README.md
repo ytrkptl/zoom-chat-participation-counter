@@ -9,11 +9,12 @@ By the way, Zoom saves the chat messages in a .txt file which gets saved to the 
 ![old chat](/src/assets/old-chat.png)
 > Chat contents of Zoom's old chat .txt file
 
+
 ## Before this site
 
 I'd have to copy the text from the file above and paste it in an Excel file, then "Sort A to Z" using the second column in Excel (the second column is where the text file would have things like "From Person A to Person B, etc." ).
 
-> ![old chat](/src/assets/old-chat-excel.png)
+![old chat](/src/assets/old-chat-excel.png)
 > Copy pasting contents into Excel file results in two columns
 
 This worked great as all messages to myself (the host) would end up having the following format:
@@ -29,6 +30,7 @@ But what about the whole week's participation? You'd have to open each .txt file
 ### Problems/Issues
 
 However, if you had more classes, students, or meetings that you wanted to account for, this 5 minutes would just kept increasing. Teachers don't have that type of time and shouldn't have to go through all this trouble. Hence the App I created did all this in just a couple of minutes. If the amount of classes or meetings increased, then the amount of time would increase a little bit, but the number of students in class would have none or relatively little affect on it (i.e. comparatively speaking to doing in manually in Excel). Yes, having to do that a hundred times in Excel, especially when the number of times someone chats varies is very time consuming.
+
 
 ## After this site
 
@@ -71,4 +73,4 @@ Note that without online articles, StackOverflow, or Google search, none of this
 
 In the future, if the Zoom Chat output file changes, my App may break again and I'll have to update the code once again. This will probably happen as I requested Zoom to add some features this morning and they were nice enough to add it to their features list. If the features get implemented, then there will be more work for me to do as well.
 
-#### By Yatrik Patel, November 4, 2020.
+#### - By Yatrik Patel, November 4, 2020
