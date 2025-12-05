@@ -1,0 +1,49 @@
+services:
+  # Development service
+  react-dev:
+    build:
+      context: .
+      target: development
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    profiles:
+      - dev
+    image: react_app_ts_dev_image
+    container_name: react_app_ts_dev_container
+
+  # Production service
+  react-prod:
+    build:
+      context: .
+      target: production
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    profiles:
+      - prod
+    image: react_app_ts_prod_image
+    container_name: react_app_ts_prod_container
+
+  # Alternative production with custom port
+  react-prod-custom:
+    build:
+      context: .
+      target: production
+    ports:
+      - "8080:80"
+    environment:
+      - NODE_ENV=production
+    profiles:
+      - prod-custom
+    image: react_app_ts_prod_custom_image
+    container_name: react_app_ts_prod_custom_container
+
+networks:
+  default:
+    driver: bridge
