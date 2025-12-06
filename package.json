@@ -1,6 +1,6 @@
 {
   "name": "zoom-participants-chat-count",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "This app helps count the number of times a participant chatted during a Zoom meeting waaaay faster than you would do manually in Excel. It also sorts the chat both alphabetically, and by participation. You can also filter messages that were sent to host only. The goal of this App is to help teachers use Zoom's chat log to count towards students' particpation in a quicker manner. This would be really helpful if you want to grade participation for a lot of meetings, classes, days, and students.",
   "author": "Yatrik Patel",
   "keywords": [
@@ -8,22 +8,16 @@
     "participation counter"
   ],
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "docker-dev-detached": "docker compose --profile dev up --build -d",
-    "docker-dev": "docker compose --profile dev up --build",
-    "docker-prod-detached": "docker compose --profile prod up --build -d",
-    "docker-prod": "docker compose --profile prod up --build",
-    "docker-prod-custom-detached": "docker compose --profile prod-custom up --build -d",
-    "docker-prod-custom": "docker compose --profile prod-custom up --build"
+    "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "react-scripts": "3.2.0"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
@@ -38,20 +32,5 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
