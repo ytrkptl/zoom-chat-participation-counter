@@ -4,4 +4,4 @@ export interface ParticipantResult {
   total: number;
 }
 
-export type ErrorElement = 'name-label-div-id' | 'textarea-div-id';
+export type ErrorElement = "name-label-div-id" | "textarea-div-id";

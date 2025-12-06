@@ -1,7 +1,7 @@
-import Header from './components/Header/Header'
-import ParticipationCounter from './components/ParticipationCounter/ParticipationCounter'
-import Footer from './components/Footer/Footer'
-import './App.css'
+import Header from "./components/Header/Header";
+import ParticipationCounter from "./components/ParticipationCounter/ParticipationCounter";
+import Footer from "./components/Footer/Footer";
+import "./App.css";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <ParticipationCounter />
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

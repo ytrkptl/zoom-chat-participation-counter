@@ -1,4 +1,4 @@
-import type { ParticipantResult } from '../types';
+import type { ParticipantResult } from "../types";
 
 /**
  * Splits chat content by newlines
@@ -14,7 +14,7 @@ export const splitByLine = (text: string): string[] => {
  */
 export const createWordMap = (wordsArray: string[]): Record<string, number> => {
   const wordsMap: Record<string, number> = {};
-  
+
   wordsArray.forEach((key) => {
     if (wordsMap.hasOwnProperty(key)) {
       wordsMap[key]++;
@@ -30,11 +30,15 @@ export const createWordMap = (wordsArray: string[]): Record<string, number> => {
  * Converts word map to sorted array of results
  * Sorts by count in descending order
  */
-export const sortByCount = (wordsMap: Record<string, number>): ParticipantResult[] => {
-  const finalWordsArray: ParticipantResult[] = Object.keys(wordsMap).map((key) => ({
-    name: key,
-    total: wordsMap[key],
-  }));
+export const sortByCount = (
+  wordsMap: Record<string, number>
+): ParticipantResult[] => {
+  const finalWordsArray: ParticipantResult[] = Object.keys(wordsMap).map(
+    (key) => ({
+      name: key,
+      total: wordsMap[key]
+    })
+  );
 
   finalWordsArray.sort((a, b) => b.total - a.total);
 
@@ -49,19 +53,19 @@ export const sortByCount = (wordsMap: Record<string, number>): ParticipantResult
 export const hasCertainPattern = (data: string): string[] => {
   const result = splitByLine(data);
   const someArray: string[] = [];
-  
+
   if (result.length === 0) return someArray;
-  
-  const fromIndex = result[0].indexOf('From');
-  
+
+  const fromIndex = result[0].indexOf("From");
+
   for (let i = 0; i < result.length; i++) {
     let sub = result[i].substring(fromIndex);
-    sub = sub.substring(0, sub.indexOf(':'));
-    if (sub !== '') {
+    sub = sub.substring(0, sub.indexOf(":"));
+    if (sub !== "") {
       someArray.push(sub);
     }
   }
-  
+
   return someArray;
 };
 
@@ -73,7 +77,7 @@ export const dynamicSort = (property: string) => {
   let sortOrder = 1;
   let sortProperty = property;
 
-  if (property[0] === '-') {
+  if (property[0] === "-") {
     sortOrder = -1;
     sortProperty = property.substring(1);
   }
