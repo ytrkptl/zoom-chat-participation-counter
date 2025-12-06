@@ -2,20 +2,24 @@
 
 # Development stage
 FROM node:22-alpine AS development
+# Enable corepack (built-in tool to manage pnpm/yarn)
+RUN corepack enable
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+# Use pnpm to install
+RUN pnpm install
 COPY . .
 EXPOSE 5173
-CMD ["npm", "run", "dev"]
+CMD ["pnpm", "run", "dev"]
 
 # Build stage
 FROM node:22-alpine AS build
+RUN corepack enable
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN pnpm install
 COPY . .
-RUN npm run build
+RUN pnpm run build
 
 # Production stage
 FROM nginx:alpine AS production

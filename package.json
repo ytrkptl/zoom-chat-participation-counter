@@ -8,6 +8,7 @@
     "participation counter"
   ],
   "private": true,
+  "packageManager": "pnpm@10.24.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
