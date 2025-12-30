@@ -19,40 +19,9 @@ This application helps teachers verify student participation in Zoom meetings by
 
 ## Getting Started
 
-This project is built with Vite and uses pnpm. You can simply use the live application available at [Zoom Chat Counter](https://zoom-chat-counter.yatrik.dev/) site. If you are developer and want to deploy your own instance, you can follow the instructions below.
+You can run this project locally using Node.js or with Docker.
 
-### Prerequisites
-
-* Node.js
-* pnpm
-
-### Installation
-
-1. Clone the repository.
-2. Install dependencies:
-
-```bash
-pnpm install
-```
-
-### Running Locally
-
-Start the development server:
-
-```bash
-pnpm dev
-```
-
-### Building for Production
-
-Build the assets for deployment:
-
-```bash
-pnpm build
-```
-
-The output will be in the `dist` folder.
-
-## Authors
+* **[Docker Instructions](./docs/docker-setup.md):** Best for consistent development and deployment environments.
+* **[Local Development Instructions](./docs/local-development.md):** For running directly with Node.js and pnpm.
 
 * **Yatrik Patel**
