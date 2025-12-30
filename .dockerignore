@@ -5,6 +5,8 @@ yarn-error.log*
 .git
 .gitignore
 README.md
+README2.md
+BlogPost.md
 .env
 .env.local
 .env.development.local
