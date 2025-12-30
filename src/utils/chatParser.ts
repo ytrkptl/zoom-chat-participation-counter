@@ -1,4 +1,4 @@
-import type { ParticipantResult } from "../types";
+import type { ParticipantResult } from '../types';
 
 /**
  * Splits chat content by newlines
@@ -16,7 +16,7 @@ export const createWordMap = (wordsArray: string[]): Record<string, number> => {
   const wordsMap: Record<string, number> = {};
 
   wordsArray.forEach((key) => {
-    if (wordsMap.hasOwnProperty(key)) {
+    if (Object.prototype.hasOwnProperty.call(wordsMap, key)) {
       wordsMap[key]++;
     } else {
       wordsMap[key] = 1;
@@ -56,12 +56,12 @@ export const hasCertainPattern = (data: string): string[] => {
 
   if (result.length === 0) return someArray;
 
-  const fromIndex = result[0].indexOf("From");
+  const fromIndex = result[0].indexOf('From');
 
   for (let i = 0; i < result.length; i++) {
     let sub = result[i].substring(fromIndex);
-    sub = sub.substring(0, sub.indexOf(":"));
-    if (sub !== "") {
+    sub = sub.substring(0, sub.indexOf(':'));
+    if (sub !== '') {
       someArray.push(sub);
     }
   }
@@ -77,7 +77,7 @@ export const dynamicSort = (property: string) => {
   let sortOrder = 1;
   let sortProperty = property;
 
-  if (property[0] === "-") {
+  if (property[0] === '-') {
     sortOrder = -1;
     sortProperty = property.substring(1);
   }

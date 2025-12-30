@@ -1,19 +1,20 @@
-import { useState, useRef } from "react";
-import "./IntroBanner.css";
+import { useState, useRef } from 'react';
+import './IntroBanner.css';
+import zoomLogo from '../../assets/Zoom Blue Logo.png';
 
 const IntroBanner = () => {
-  const [dropdownDisplay, showDropdown] = useState<"none" | "flex">("none");
+  const [dropdownDisplay, showDropdown] = useState<'none' | 'flex'>('none');
   const [buttonTwo, showButtonTwo] = useState(false);
   const extraInfoRef = useRef<HTMLDivElement>(null);
 
   const dropdownFunction = () => {
     const isDroppedDown = extraInfoRef.current?.style.display;
-    if (isDroppedDown === "none") {
-      showDropdown("flex");
+    if (isDroppedDown === 'none') {
+      showDropdown('flex');
       showButtonTwo(true);
       return;
     }
-    showDropdown("none");
+    showDropdown('none');
     showButtonTwo(false);
   };
 
@@ -49,7 +50,7 @@ const IntroBanner = () => {
         <img
           className="zoom-logo"
           alt="zoom-logo"
-          src="/Zoom Blue Logo.png"
+          src={zoomLogo}
         />
         <span className="intro-span">
           If yes, then you may find this App to be interesting:

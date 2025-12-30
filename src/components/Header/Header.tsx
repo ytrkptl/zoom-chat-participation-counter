@@ -1,4 +1,5 @@
-import "./Header.css";
+import './Header.css';
+import logo from '../../assets/math-processor-th.png';
 
 const Header = () => {
   return (
@@ -6,7 +7,7 @@ const Header = () => {
       <img
         className="logo"
         alt="logo"
-        src="/math-processor-th.png"
+        src={logo}
       />
       <h2 className="title">Zoom Chat Participation Counter</h2>
     </div>

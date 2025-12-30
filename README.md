@@ -1,81 +1,27 @@
 # Zoom Chat Participation Counter
 
-## Why I created this App
+[![Read the Blog Post](https://img.shields.io/badge/Read-The%20Blog%20Post-blue?style=for-the-badge)](./BlogPost.md)
 
-To help count the number of times a participant has replied or chatted privately with the teacher. It worked great as I always kept Zoom Participation option to (participate with) "Host Only."
+This application helps teachers verify student participation in Zoom meetings by parsing chat logs. It counts the number of times a participant chatted, which is useful for grading participation in remote classrooms.
 
-By the way, Zoom saves the chat messages in a .txt file which gets saved to the hosts's computer. I am not sure if it works on free accounts, but I'm using it for work, which is probably a paid account. At the time of making this site, Zoom used to save the text output as follows:
+## Features
 
-![old chat](/src/assets/old-chat2.png)
+* **Fast Parsing:** Parses Zoom chat text files instantly.
+* **Intelligent Counting:** Aggregates message counts by participant name.
+* **Privacy Focused:** All processing happens locally in your browser. No data is uploaded to any server.
+* **Sorting:** Sort results alphabetically or by participation count.
 
-## Before this site
+## Tech Stack
 
-I'd have to copy the text from the file above and paste it in an Excel file, then "Sort A to Z" using the second column in Excel (the second column is where the text file would have things like "From Person A to Person B, etc." ).
+* React
+* TypeScript
+* Vite
 
-![old chat in Excel](/src/assets/old-chat-excel3.png)
+## Getting Started
 
-This worked great as all messages to myself (the host) would end up having the following format:
+You can run this project locally using Node.js or with Docker.
 
-    `hh:mm:ss From Sender to Host: message`
+* **[Docker Instructions](./docs/docker-setup.md):** Best for consistent development and deployment environments.
+* **[Local Development Instructions](./docs/local-development.md):** For running directly with Node.js and pnpm.
 
-Once sorted, I would use the "countA" function in Excel to count how many times a participant chatted with me. I'd have to do it manually for however many participants were in the meeting. Doing so would take about 5 minutes for a single meeting.
-
-### How to count participation for the whole week using Excel
-
-But what about the whole week's participation? You'd have to open each .txt file by navigating to it, copying and pasting its contents to the Excel file, then Sorting A to Z in the Excel file, then count using the "countA" function in Excel. It would still take about 5 - 7 minutes overall.
-
-### Problems/Issues
-
-However, if you had more classes, students, or meetings that you wanted to account for, this 5 minutes would just kept increasing. Teachers don't have that type of time and shouldn't have to go through all this trouble. Hence the App I created did all this in just a couple of minutes. If the amount of classes or meetings increased, then the amount of time would increase a little bit, but the number of students in class would have none or relatively little affect on it (i.e. comparatively speaking to doing in manually in Excel). Yes, having to do that a hundred times in Excel, especially when the number of times someone chats varies is very time consuming.
-
-## After this site
-
-### Steps for counting Zoom participation using JavaScript
-
-To do this, I'd have to separate the text content at the end of each line. Then, I'd have to extract a substring that begins with the word "From" and ends at the "indexOf(lastname)" as all messages were private, i.e. were only sent to the host, and as all messages followed the format mentioned above. In my case, all teachers's host name is their first and last name by default, so I was able to ask them for their lastname exactly the way it appeared in the text file, and only then prompt them to upload the text files. Then, I'd have to do the harder work of sorting and counting.
-
-### Bugs encountered
-
-Anyways, recently when I tried to use this App, things weren't working. What could have gone wrong? So, I was back at the terminal this morning trying to debug (I have a funny story about debugging that I may be sharing later) this App. It seems that Zoom now outputs chat contents into a text (.txt) file that looks like the following:
-
-![new chat](/src/assets/new-chat2.png)
-
-It now has the following format:
-
-    `hh:mm:ss From Sender to Host: message`
-
-But wait, what if I allow students to chat with everyone, both publicly and privately?
-
-Well, here is the format for public chat messages:
-
-    `hh:mm:ss From Sender : message`
-
-Here is the format for private chat messages:
-
-    `hh:mm:ss From Sender to Receiver(Direct Message) : message`
-
-In either case, what I need to achieve now is first to be able to separate the text content at the end of each line, then extract a substring that begins with the word "From" and ends at the colon character, ":". Once this is achieved, I have to do the hard part of sorting and counting occurrences of each string within say an array or an object. I won't get into the explanation here but the code and the site can be found at the following links:
-
-Here's the GitHub repository:
-
-<https://github.com/ytrkptl/zoom-chat-participation-counter>
-
-Here's the link to site itself:
-
-<https://participation-counter.netlify.app/>
-
-Note that without online articles, StackOverflow, or Google search, none of this would have been possible. Probably the biggest thanks I owe to is Andrei Neagoie and his courses on ZeroToMastery or Udemy.
-
-In the future, if the Zoom Chat output file changes, my App may break again and I'll have to update the code once again. This will probably happen as I requested Zoom to add some features this morning and they were nice enough to add it to their features list. If the features get implemented, then there will be more work for me to do as well.
-
-If you can try out this App or site and provide some feedback, that would be greatly appreciated.
-
-#### Credits
-
-- Some images above were made using Excalidraw
-
-- Image by Chris Montgomery from [Unsplash](https://unsplash.com/photos/smgTvepind4)
-
-- Image by No-longer-here from [Pixabay](https://pixabay.com/users/no-longer-here-19203/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1768845)
-
-#### - By Yatrik Patel, November 4, 2020
+* **Yatrik Patel**

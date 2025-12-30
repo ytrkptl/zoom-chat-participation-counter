@@ -1,19 +1,19 @@
-import { useState, useRef } from "react";
-import IntroBanner from "../IntroBanner/IntroBanner";
+import { useState, useRef } from 'react';
+import IntroBanner from '../IntroBanner/IntroBanner';
 import {
   hasCertainPattern,
   createWordMap,
   sortByCount,
   dynamicSort
-} from "../../utils/chatParser";
-import type { ParticipantResult, ErrorElement } from "../../types";
-import "./ParticipationCounter.css";
+} from '../../utils/chatParser';
+import type { ParticipantResult, ErrorElement } from '../../types';
+import './ParticipationCounter.css';
 
 const ParticipationCounter = () => {
   const [sortedArray, updateSortedArray] = useState<ParticipantResult[] | null>(
     null
   );
-  const [hostname, updateHostname] = useState("");
+  const [hostname, updateHostname] = useState('');
   const [results, showResults] = useState(false);
   const [hostnameError, updateHostnameError] = useState<string | null>(null);
   const [textareaError, updateTextareaError] = useState<string | null>(null);
@@ -23,7 +23,7 @@ const ParticipationCounter = () => {
   const hostnameRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const [textareaContent, updateTextareaContent] = useState("");
+  const [textareaContent, updateTextareaContent] = useState('');
   // source: http://chrisjopa.com/2016/04/21/counting-word-frequencies-with-javascript/
 
   const scrollTo = (hashName: string) => {
@@ -32,37 +32,37 @@ const ParticipationCounter = () => {
   };
 
   const showError = (text: string | null, element: ErrorElement) => {
-    if (text === null && element === "name-label-div-id") {
+    if (text === null && element === 'name-label-div-id') {
       updateHostnameError(null);
-      hostnameRef.current?.classList.remove("required-highlight");
-    } else if (element === "name-label-div-id") {
+      hostnameRef.current?.classList.remove('required-highlight');
+    } else if (element === 'name-label-div-id') {
       updateHostnameError(text);
-      hostnameRef.current?.classList.add("required-highlight");
+      hostnameRef.current?.classList.add('required-highlight');
       scrollTo(element);
-    } else if (text === null && element === "textarea-div-id") {
+    } else if (text === null && element === 'textarea-div-id') {
       updateTextareaError(null);
       document
-        .getElementById("textarea-id")
-        ?.classList.remove("required-highlight");
-    } else if (element === "textarea-div-id") {
+        .getElementById('textarea-id')
+        ?.classList.remove('required-highlight');
+    } else if (element === 'textarea-div-id') {
       updateTextareaError(text);
       document
-        .getElementById("textarea-id")
-        ?.classList.add("required-highlight");
+        .getElementById('textarea-id')
+        ?.classList.add('required-highlight');
       scrollTo(element);
     }
   };
 
   const readData = () => {
-    let data = textareaContent;
-    if (data === null || data === undefined || data === "") {
+    const data = textareaContent;
+    if (data === null || data === undefined || data === '') {
       return null;
     }
 
-    if (hostname !== "" && data.indexOf(hostname) === -1) {
+    if (hostname !== '' && data.indexOf(hostname) === -1) {
       showError(
-        "No such last name was found in the uploaded text or file",
-        "name-label-div-id"
+        'No such last name was found in the uploaded text or file',
+        'name-label-div-id'
       );
       return null;
     }
@@ -72,7 +72,7 @@ const ParticipationCounter = () => {
     const anotherArray = sortByCount(wordMap);
 
     updateSortedArray(anotherArray);
-    hostnameRef.current?.classList.remove("required-highlight");
+    hostnameRef.current?.classList.remove('required-highlight');
     updateHostnameError(null);
     showResults(true);
 
@@ -86,7 +86,7 @@ const ParticipationCounter = () => {
   const sortAlphabetically = () => {
     const data = readData();
     if (data) {
-      const alphabetized = data.sort(dynamicSort("name"));
+      const alphabetized = data.sort(dynamicSort('name'));
       updateSortedArray(alphabetized);
     }
   };
@@ -99,13 +99,13 @@ const ParticipationCounter = () => {
           el.name.includes(`to  ${hostname}(Direct Message)`) ||
           el.name.includes(`to  ${hostname}(Privately)`)
       );
-      const alphabetized = filteredArray.sort(dynamicSort("name"));
+      const alphabetized = filteredArray.sort(dynamicSort('name'));
       updateSortedArray(alphabetized);
     }
   };
 
   const clearTextArea = () => {
-    updateTextareaContent("");
+    updateTextareaContent('');
   };
 
   const clearResults = () => {
@@ -116,13 +116,13 @@ const ParticipationCounter = () => {
   const resetAll = () => {
     clearTextArea();
     clearResults();
-    updateHostname("");
-    updateHostnameError("");
+    updateHostname('');
+    updateHostnameError('');
     setStepCounter(1);
     if (checkboxRef.current) checkboxRef.current.checked = false;
     if (hostnameRef.current) {
       hostnameRef.current.readOnly = false;
-      hostnameRef.current.classList.remove("hostname-disable");
+      hostnameRef.current.classList.remove('hostname-disable');
     }
   };
 
@@ -143,23 +143,23 @@ const ParticipationCounter = () => {
       Array.from(event.target.files).forEach((file) => {
         fileSelectedHandler(file);
       });
-      event.target.value = "";
+      event.target.value = '';
     }
   };
 
   const updateHostnameHandler = (hostnameValue: string) => {
     return new Promise<boolean>((resolve, reject) => {
       updateHostname(hostnameValue);
-      if (hostnameValue === "") {
-        showError("Hostname is required", "name-label-div-id");
-        reject(false);
+      if (hostnameValue === '') {
+        showError('Hostname is required', 'name-label-div-id');
+        reject(new Error('Hostname is required'));
         return;
       }
       resolve(true);
     })
       .then((value) => {
         if (value) {
-          showError(null, "name-label-div-id");
+          showError(null, 'name-label-div-id');
         }
       })
       .catch(() => {
@@ -169,9 +169,9 @@ const ParticipationCounter = () => {
 
   const updateTextareaHandler = (text: string) => {
     return new Promise<boolean>((resolve, reject) => {
-      if (text === "") {
-        showError("Text is required", "textarea-div-id");
-        reject(false);
+      if (text === '') {
+        showError('Text is required', 'textarea-div-id');
+        reject(new Error('Text is required'));
       } else {
         updateTextareaContent(text);
         resolve(true);
@@ -179,7 +179,7 @@ const ParticipationCounter = () => {
     })
       .then((value) => {
         if (value) {
-          showError(null, "textarea-div-id");
+          showError(null, 'textarea-div-id');
         }
       })
       .catch(() => {
@@ -189,32 +189,32 @@ const ParticipationCounter = () => {
 
   const updateCheckboxStatus = () => {
     if (
-      hostname !== "" &&
+      hostname !== '' &&
       hostname !== undefined &&
       hostname !== null &&
       checkboxRef.current?.checked
     ) {
-      showError(null, "textarea-div-id");
+      showError(null, 'textarea-div-id');
       if (hostnameRef.current) {
         hostnameRef.current.readOnly = true;
-        hostnameRef.current.classList.add("hostname-disable");
+        hostnameRef.current.classList.add('hostname-disable');
       }
       setStepCounter(2);
     } else {
-      showError("Hostname is required", "name-label-div-id");
+      showError('Hostname is required', 'name-label-div-id');
       if (hostnameRef.current) {
         hostnameRef.current.readOnly = false;
-        hostnameRef.current.classList.remove("hostname-disable");
+        hostnameRef.current.classList.remove('hostname-disable');
       }
       setStepCounter(1);
     }
   };
 
   const handleSubmit = async () => {
-    await updateTextareaHandler(textareaRef.current?.value || "");
+    await updateTextareaHandler(textareaRef.current?.value || '');
     await updateHostnameHandler(hostname);
     sortAlphabetically();
-    scrollTo("table-div-id");
+    scrollTo('table-div-id');
   };
 
   return (
@@ -281,7 +281,9 @@ const ParticipationCounter = () => {
             id="hostname-input"
             placeholder="Your Hostname"
             value={hostname}
-            onChange={(event) => updateHostnameHandler(event.target.value)}
+            onChange={(event) => {
+              void updateHostnameHandler(event.target.value);
+            }}
           />
           {hostnameError && (
             <div className="hostname-error">{hostnameError}</div>
@@ -300,9 +302,9 @@ const ParticipationCounter = () => {
           </label>
         </div>
         <br />
-        <div className={`${stepCounter === 1 && "stepClass2"}`}>
+        <div className={`${stepCounter === 1 && 'stepClass2'}`}>
           <div
-            className={`step-and-text-div step-div-2 ${stepCounter === 1 && "stepClass2"}`}>
+            className={`step-and-text-div step-div-2 ${stepCounter === 1 && 'stepClass2'}`}>
             <span className="step">Step 2</span>
             <p className="step-para-1">
               Copy-paste the contents from your saved "meeting_saved_chat.txt"
@@ -354,9 +356,9 @@ const ParticipationCounter = () => {
               required
               name="message"
               value={textareaContent}
-              onChange={(event) =>
-                updateTextareaHandler(event.target.value)
-              }></textarea>
+              onChange={(event) => {
+                void updateTextareaHandler(event.target.value);
+              }}></textarea>
             {textareaError && (
               <div className="textarea-error">{textareaError}</div>
             )}
@@ -370,7 +372,9 @@ const ParticipationCounter = () => {
             <button
               className="submit-button"
               type="button"
-              onClick={() => handleSubmit()}>
+              onClick={() => {
+                void handleSubmit();
+              }}>
               Submit
             </button>
             <button
