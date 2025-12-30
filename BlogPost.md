@@ -1,5 +1,7 @@
 # Automating Zoom Participation: From Manual Excel Grunt Work to Web App
 
+***Disclaimer:** This article was updated with the help of Gemini 3 Pro, an AI writing assistant from Google.*
+
 As an educator, tracking student participation is vital for engagement and grading, but the process can be incredibly tedious. This project was born out of the need to automate the manual grunt work of counting Zoom chat messages, allowing teachers to focus on teaching rather than administrative tasks.
 
 ## The Context: Participation as a Grade
