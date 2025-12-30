@@ -23,5 +23,3 @@ You can run this project locally using Node.js or with Docker.
 
 * **[Docker Instructions](./docs/docker-setup.md):** Best for consistent development and deployment environments.
 * **[Local Development Instructions](./docs/local-development.md):** For running directly with Node.js and pnpm.
-
-* **Yatrik Patel**
