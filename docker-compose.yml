@@ -15,6 +15,12 @@ services:
       - dev
     image: zoom_participants_chat_count_dev_image
     container_name: zoom_participants_chat_count_dev_container
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5173"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
   # Production service
   react-prod:
@@ -29,6 +35,12 @@ services:
       - prod
     image: zoom_participants_chat_count_prod_image
     container_name: zoom_participants_chat_count_prod_container
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
 
 networks:
   default:
