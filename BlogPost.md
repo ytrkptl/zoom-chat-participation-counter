@@ -174,11 +174,15 @@ Sometimes, students message the host privately. We can filter for these messages
 
 Software that relies on third-party output formats (like Zoom logs) is inherently fragile. When Zoom changed their output format, my app initially failed. Debugging this required analyzing the new text structure and updating the parsing logic to handle both "Direct Message" and standard formats.
 
+## Updates
+
+The application was last verified to be in working condition in November 2025.
+
 ## Credits
 
 * **Author:** Yatrik Patel
 * **Created:** November 4, 2020
-* **Last Updated:** December 2025 (Tested and verified working in Fall 2025)
+* **Last Updated:** December 30, 2025
 * **Editorial Assistance:** Gemini 3 Pro (for helping me update this article)
 * **Images:**
   * Diagrams made with Excalidraw
