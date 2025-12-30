@@ -54,7 +54,7 @@ const ParticipationCounter = () => {
   };
 
   const readData = () => {
-    let data = textareaContent;
+    const data = textareaContent;
     if (data === null || data === undefined || data === "") {
       return null;
     }
@@ -152,7 +152,7 @@ const ParticipationCounter = () => {
       updateHostname(hostnameValue);
       if (hostnameValue === "") {
         showError("Hostname is required", "name-label-div-id");
-        reject(false);
+        reject(new Error("Hostname is required"));
         return;
       }
       resolve(true);
@@ -171,7 +171,7 @@ const ParticipationCounter = () => {
     return new Promise<boolean>((resolve, reject) => {
       if (text === "") {
         showError("Text is required", "textarea-div-id");
-        reject(false);
+        reject(new Error("Text is required"));
       } else {
         updateTextareaContent(text);
         resolve(true);
@@ -281,7 +281,9 @@ const ParticipationCounter = () => {
             id="hostname-input"
             placeholder="Your Hostname"
             value={hostname}
-            onChange={(event) => updateHostnameHandler(event.target.value)}
+            onChange={(event) => {
+              void updateHostnameHandler(event.target.value);
+            }}
           />
           {hostnameError && (
             <div className="hostname-error">{hostnameError}</div>
@@ -354,9 +356,9 @@ const ParticipationCounter = () => {
               required
               name="message"
               value={textareaContent}
-              onChange={(event) =>
-                updateTextareaHandler(event.target.value)
-              }></textarea>
+              onChange={(event) => {
+                void updateTextareaHandler(event.target.value);
+              }}></textarea>
             {textareaError && (
               <div className="textarea-error">{textareaError}</div>
             )}
@@ -370,7 +372,9 @@ const ParticipationCounter = () => {
             <button
               className="submit-button"
               type="button"
-              onClick={() => handleSubmit()}>
+              onClick={() => {
+                void handleSubmit();
+              }}>
               Submit
             </button>
             <button

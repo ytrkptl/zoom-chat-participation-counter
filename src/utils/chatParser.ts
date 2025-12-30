@@ -16,7 +16,7 @@ export const createWordMap = (wordsArray: string[]): Record<string, number> => {
   const wordsMap: Record<string, number> = {};
 
   wordsArray.forEach((key) => {
-    if (wordsMap.hasOwnProperty(key)) {
+    if (Object.prototype.hasOwnProperty.call(wordsMap, key)) {
       wordsMap[key]++;
     } else {
       wordsMap[key] = 1;
