@@ -1,5 +1,5 @@
-import "./Header.css";
-import logo from "../../assets/math-processor-th.png";
+import './Header.css';
+import logo from '../../assets/math-processor-th.png';
 
 const Header = () => {
   return (
